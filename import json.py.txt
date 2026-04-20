@@ -1,0 +1,32 @@
+import json
+ 
+def load_api_data(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+            return data
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        return None
+ 
+def main():
+    file_path = "test_api.json"
+    api_data = load_api_data(file_path)
+ 
+    if api_data:
+        print("Status:", api_data.get("status"))
+        print("Message:", api_data.get("message"))
+ 
+        user = api_data.get("data", {}).get("user", {})
+        print("\nUser Info:")
+        print("ID:", user.get("id"))
+        print("Name:", user.get("name"))
+        print("Email:", user.get("email"))
+ 
+        items = api_data.get("data", {}).get("items", [])
+        print("\nItems:")
+        for item in items:
+            print(f"- {item['name']} (₹{item['price']})")
+ 
+if __name__ == "__main__":
+    main()
