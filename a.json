@@ -1,0 +1,24 @@
+{
+  "status": "success",
+  "message": "Data fetched successfully",
+  "data": {
+    "user": {
+      "id": 101,
+      "name": "Aditya",
+      "email": "aditya@example.com",
+      "active": true
+    },
+    "items": [
+      {
+        "id": 1,
+        "name": "Item One",
+        "price": 100
+      },
+      {
+        "id": 2,
+        "name": "Item Two",
+        "price": 200
+      }
+    ]
+  }
+}
